@@ -19,12 +19,9 @@ const buttonStyle = `
     border-radius: 5px;
 `;
 
-
 const pauseButton = document.createElement('button');
 pauseButton.textContent = '일시정지';
 pauseButton.style.cssText = buttonStyle;
-
-let animationFrameId;
 
 const manualButton = document.createElement('button');
 manualButton.textContent = '설명서';
@@ -121,7 +118,7 @@ var cactus={
     //}
 }
 var jump=false;
-var step=-3;
+var step=-20;
 var frame=0;
 var cactus_list=[];
 var animation;
@@ -150,11 +147,11 @@ function play() {
 
     if (jump===true){
         dino.y += step;
-        if(dino.y<=200){
+        if(dino.y<=600){
             step*=-1;
 
         }
-        if(dino.y===500){
+        if(dino.y===200){
             jump=false;
             step*=-1;
         }
